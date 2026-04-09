@@ -1,0 +1,261 @@
+{
+  "version": "1.3",
+  "schemaVersion": "1.0",
+  "generatedBy": "ecc-tools",
+  "generatedAt": "2026-04-09T16:05:09.518Z",
+  "repo": "https://github.com/Asylum4You/sqlmap",
+  "profiles": {
+    "requested": "full",
+    "recommended": "full",
+    "effective": "developer",
+    "requestedAlias": "full",
+    "recommendedAlias": "full",
+    "effectiveAlias": "developer"
+  },
+  "requestedProfile": "full",
+  "profile": "developer",
+  "recommendedProfile": "full",
+  "effectiveProfile": "developer",
+  "tier": "free",
+  "requestedComponents": [
+    "repo-baseline",
+    "workflow-automation",
+    "security-audits",
+    "research-tooling",
+    "team-rollout",
+    "governance-controls"
+  ],
+  "selectedComponents": [
+    "repo-baseline",
+    "workflow-automation"
+  ],
+  "requestedAddComponents": [],
+  "requestedRemoveComponents": [],
+  "blockedRemovalComponents": [],
+  "tierFilteredComponents": [
+    "security-audits",
+    "research-tooling",
+    "team-rollout",
+    "governance-controls"
+  ],
+  "requestedRootPackages": [
+    "runtime-core",
+    "workflow-pack",
+    "agentshield-pack",
+    "research-pack",
+    "team-config-sync",
+    "enterprise-controls"
+  ],
+  "selectedRootPackages": [
+    "runtime-core",
+    "workflow-pack"
+  ],
+  "requestedPackages": [
+    "runtime-core",
+    "workflow-pack",
+    "agentshield-pack",
+    "research-pack",
+    "team-config-sync",
+    "enterprise-controls"
+  ],
+  "requestedAddPackages": [],
+  "requestedRemovePackages": [],
+  "selectedPackages": [
+    "runtime-core",
+    "workflow-pack"
+  ],
+  "packages": [
+    "runtime-core",
+    "workflow-pack"
+  ],
+  "blockedRemovalPackages": [],
+  "tierFilteredRootPackages": [
+    "agentshield-pack",
+    "research-pack",
+    "team-config-sync",
+    "enterprise-controls"
+  ],
+  "tierFilteredPackages": [
+    "agentshield-pack",
+    "research-pack",
+    "team-config-sync",
+    "enterprise-controls"
+  ],
+  "conflictingPackages": [],
+  "dependencyGraph": {
+    "runtime-core": [],
+    "workflow-pack": [
+      "runtime-core"
+    ]
+  },
+  "resolutionOrder": [
+    "runtime-core",
+    "workflow-pack"
+  ],
+  "requestedModules": [
+    "runtime-core",
+    "workflow-pack",
+    "agentshield-pack",
+    "research-pack",
+    "team-config-sync",
+    "enterprise-controls"
+  ],
+  "selectedModules": [
+    "runtime-core",
+    "workflow-pack"
+  ],
+  "modules": [
+    "runtime-core",
+    "workflow-pack"
+  ],
+  "managedFiles": [
+    ".claude/skills/sqlmap/SKILL.md",
+    ".agents/skills/sqlmap/SKILL.md",
+    ".agents/skills/sqlmap/agents/openai.yaml",
+    ".claude/identity.json",
+    ".codex/config.toml",
+    ".codex/AGENTS.md",
+    ".codex/agents/explorer.toml",
+    ".codex/agents/reviewer.toml",
+    ".codex/agents/docs-researcher.toml",
+    ".claude/homunculus/instincts/inherited/sqlmap-instincts.yaml",
+    ".claude/commands/core-settings-paired-update.md",
+    ".claude/commands/add-or-update-payload-or-query.md",
+    ".claude/commands/implement-new-option-or-feature.md"
+  ],
+  "packageFiles": {
+    "runtime-core": [
+      ".claude/skills/sqlmap/SKILL.md",
+      ".agents/skills/sqlmap/SKILL.md",
+      ".agents/skills/sqlmap/agents/openai.yaml",
+      ".claude/identity.json",
+      ".codex/config.toml",
+      ".codex/AGENTS.md",
+      ".codex/agents/explorer.toml",
+      ".codex/agents/reviewer.toml",
+      ".codex/agents/docs-researcher.toml",
+      ".claude/homunculus/instincts/inherited/sqlmap-instincts.yaml"
+    ],
+    "workflow-pack": [
+      ".claude/commands/core-settings-paired-update.md",
+      ".claude/commands/add-or-update-payload-or-query.md",
+      ".claude/commands/implement-new-option-or-feature.md"
+    ]
+  },
+  "moduleFiles": {
+    "runtime-core": [
+      ".claude/skills/sqlmap/SKILL.md",
+      ".agents/skills/sqlmap/SKILL.md",
+      ".agents/skills/sqlmap/agents/openai.yaml",
+      ".claude/identity.json",
+      ".codex/config.toml",
+      ".codex/AGENTS.md",
+      ".codex/agents/explorer.toml",
+      ".codex/agents/reviewer.toml",
+      ".codex/agents/docs-researcher.toml",
+      ".claude/homunculus/instincts/inherited/sqlmap-instincts.yaml"
+    ],
+    "workflow-pack": [
+      ".claude/commands/core-settings-paired-update.md",
+      ".claude/commands/add-or-update-payload-or-query.md",
+      ".claude/commands/implement-new-option-or-feature.md"
+    ]
+  },
+  "files": [
+    {
+      "moduleId": "runtime-core",
+      "path": ".claude/skills/sqlmap/SKILL.md",
+      "description": "Repository-specific Claude Code skill generated from git history."
+    },
+    {
+      "moduleId": "runtime-core",
+      "path": ".agents/skills/sqlmap/SKILL.md",
+      "description": "Codex-facing copy of the generated repository skill."
+    },
+    {
+      "moduleId": "runtime-core",
+      "path": ".agents/skills/sqlmap/agents/openai.yaml",
+      "description": "Codex skill metadata so the repo skill appears cleanly in the skill interface."
+    },
+    {
+      "moduleId": "runtime-core",
+      "path": ".claude/identity.json",
+      "description": "Suggested identity.json baseline derived from repository conventions."
+    },
+    {
+      "moduleId": "runtime-core",
+      "path": ".codex/config.toml",
+      "description": "Repo-local Codex MCP and multi-agent baseline aligned with ECC defaults."
+    },
+    {
+      "moduleId": "runtime-core",
+      "path": ".codex/AGENTS.md",
+      "description": "Codex usage guide that points at the generated repo skill and workflow bundle."
+    },
+    {
+      "moduleId": "runtime-core",
+      "path": ".codex/agents/explorer.toml",
+      "description": "Read-only explorer role config for Codex multi-agent work."
+    },
+    {
+      "moduleId": "runtime-core",
+      "path": ".codex/agents/reviewer.toml",
+      "description": "Read-only reviewer role config focused on correctness and security."
+    },
+    {
+      "moduleId": "runtime-core",
+      "path": ".codex/agents/docs-researcher.toml",
+      "description": "Read-only docs researcher role config for API verification."
+    },
+    {
+      "moduleId": "runtime-core",
+      "path": ".claude/homunculus/instincts/inherited/sqlmap-instincts.yaml",
+      "description": "Continuous-learning instincts derived from repository patterns."
+    },
+    {
+      "moduleId": "workflow-pack",
+      "path": ".claude/commands/core-settings-paired-update.md",
+      "description": "Workflow command scaffold for core-settings-paired-update."
+    },
+    {
+      "moduleId": "workflow-pack",
+      "path": ".claude/commands/add-or-update-payload-or-query.md",
+      "description": "Workflow command scaffold for add-or-update-payload-or-query."
+    },
+    {
+      "moduleId": "workflow-pack",
+      "path": ".claude/commands/implement-new-option-or-feature.md",
+      "description": "Workflow command scaffold for implement-new-option-or-feature."
+    }
+  ],
+  "workflows": [
+    {
+      "command": "core-settings-paired-update",
+      "path": ".claude/commands/core-settings-paired-update.md"
+    },
+    {
+      "command": "add-or-update-payload-or-query",
+      "path": ".claude/commands/add-or-update-payload-or-query.md"
+    },
+    {
+      "command": "implement-new-option-or-feature",
+      "path": ".claude/commands/implement-new-option-or-feature.md"
+    }
+  ],
+  "adapters": {
+    "claudeCode": {
+      "skillPath": ".claude/skills/sqlmap/SKILL.md",
+      "identityPath": ".claude/identity.json",
+      "commandPaths": [
+        ".claude/commands/core-settings-paired-update.md",
+        ".claude/commands/add-or-update-payload-or-query.md",
+        ".claude/commands/implement-new-option-or-feature.md"
+      ]
+    },
+    "codex": {
+      "configPath": ".codex/config.toml",
+      "agentsGuidePath": ".codex/AGENTS.md",
+      "skillPath": ".agents/skills/sqlmap/SKILL.md"
+    }
+  }
+}
