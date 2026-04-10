@@ -1,0 +1,468 @@
+# Instincts generated from https://github.com/Asylum4You/sqlmap
+# Generated: 2026-04-09T16:06:03.737Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: sqlmap-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Asylum4You/sqlmap
+---
+
+# Sqlmap Commit Length
+
+## Action
+
+Keep commit messages concise (~23 characters)
+
+## Evidence
+
+- Average commit message length: 23 chars
+- Based on 100 commits
+
+---
+id: sqlmap-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Asylum4You/sqlmap
+---
+
+# Sqlmap Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: sqlmap-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Asylum4You/sqlmap
+---
+
+# Sqlmap Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: sqlmap-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Asylum4You/sqlmap
+---
+
+# Sqlmap Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: sqlmap-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Asylum4You/sqlmap
+---
+
+# Sqlmap Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: sqlmap-workflow-core-settings-paired-update
+trigger: "when doing core settings paired update"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Asylum4You/sqlmap
+---
+
+# Sqlmap Workflow Core Settings Paired Update
+
+## Action
+
+Follow the core-settings-paired-update workflow:
+1. Edit lib/core/settings.py to update/add/remove a setting or constant.
+2. Edit one or more related files (e.g., lib/core/common.py, lib/request/connect.py, plugins/dbms/*/fingerprint.py, lib/core/agent.py, etc.) to implement or support the change.
+3. Commit both changes together with a reference to the issue or feature.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: lib/core/settings.py, lib/core/common.py, lib/request/connect.py
+
+---
+id: sqlmap-workflow-add-or-update-payload-or-query
+trigger: "when doing add or update payload or query"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Asylum4You/sqlmap
+---
+
+# Sqlmap Workflow Add Or Update Payload Or Query
+
+## Action
+
+Follow the add-or-update-payload-or-query workflow:
+1. Edit or add a file in data/xml/payloads/*.xml or data/xml/queries.xml or data/procs/oracle/*.sql.
+2. Optionally, update lib/core/settings.py to register or reference the new payload/query.
+3. Commit both changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: data/xml/payloads/boolean_blind.xml, data/xml/queries.xml, data/procs/oracle/dns_request.sql
+
+---
+id: sqlmap-workflow-implement-new-option-or-feature
+trigger: "when doing implement new option or feature"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Asylum4You/sqlmap
+---
+
+# Sqlmap Workflow Implement New Option Or Feature
+
+## Action
+
+Follow the implement-new-option-or-feature workflow:
+1. Edit lib/core/settings.py to add new option constants or defaults.
+2. Edit lib/parse/cmdline.py to parse the new option.
+3. Edit lib/core/option.py and/or lib/core/optiondict.py to handle the new option.
+4. Edit sqlmap.conf to document the new option.
+5. Edit or add implementation files as needed (e.g., lib/core/agent.py, lib/techniques/union/test.py).
+6. Commit all related changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: lib/core/settings.py, lib/parse/cmdline.py, lib/core/option.py
+
+---
+id: sqlmap-workflow-documentation-or-readme-update
+trigger: "when doing documentation or readme update"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Asylum4You/sqlmap
+---
+
+# Sqlmap Workflow Documentation Or Readme Update
+
+## Action
+
+Follow the documentation-or-readme-update workflow:
+1. Edit or add files in doc/translations/ or the main README.md.
+2. Optionally, update lib/core/settings.py if documentation reflects a new/changed feature.
+3. Commit documentation changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: README.md, doc/translations/README-in-HI.md, doc/translations/README-de-DE.md
+
+---
+id: sqlmap-instinct-file-naming-camelCase
+trigger: "When creating or renaming a Python file in the codebase."
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., myModule.py).
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+- Observed in lib/core/settings.py, lib/core/common.py
+
+---
+id: sqlmap-instinct-function-naming-camelCase
+trigger: "When defining a function in Python source code."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase (e.g., parseInput()).
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+- Seen in lib/core/common.py
+
+---
+id: sqlmap-instinct-class-naming-PascalCase
+trigger: "When defining a class in Python source code."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase (e.g., SqlmapAgent).
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+- Seen in lib/core/agent.py
+
+---
+id: sqlmap-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant in Python source code."
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Name the constant in SCREAMING_SNAKE_CASE (e.g., DEFAULT_TIMEOUT).
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+- Seen in lib/core/settings.py
+
+---
+id: sqlmap-instinct-relative-imports
+trigger: "When importing modules within the package."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Relative Imports
+
+## Action
+
+Use relative imports (e.g., from .common import ...).
+
+## Evidence
+
+- Pattern in importStyle: relative
+- Seen in lib/core/common.py
+
+---
+id: sqlmap-instinct-named-exports
+trigger: "When exporting functions or classes from a module."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Named Exports
+
+## Action
+
+Use named exports (explicitly list exported symbols).
+
+## Evidence
+
+- Pattern in exportStyle: named
+- Seen in __all__ usage in modules
+
+---
+id: sqlmap-instinct-test-location-separate
+trigger: "When adding or updating tests."
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Test Location Separate
+
+## Action
+
+Place test files in a separate test directory, not mixed with source code.
+
+## Evidence
+
+- Pattern in architecture.testLocation: separate
+- Seen in test folder structure
+
+---
+id: sqlmap-instinct-test-file-naming
+trigger: "When naming a test file."
+confidence: 0.75
+domain: testing
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Test File Naming
+
+## Action
+
+Name test files to reflect the module or feature being tested, using camelCase.
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+- Seen in lib/techniques/union/test.py
+
+---
+id: sqlmap-instinct-commit-message-format
+trigger: "When writing a git commit message."
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Commit Message Format
+
+## Action
+
+Start the commit message with a lowercase verb or prefix (e.g., fix:, chore:, update:), optionally reference an issue (e.g., Fixes #1234), and keep the message concise (~23 characters).
+
+## Evidence
+
+- Seen in commit: 'Update: Indonesian documentation. (#5588)'
+- Seen in commit: 'fixed: sqlite3.OperationalError: table logs already exists (#5677)'
+- Seen in commit: 'chore: remove repetitive words (#5687)'
+- Pattern: averageLength: 23
+
+---
+id: sqlmap-instinct-core-settings-paired-update
+trigger: "When a feature or bug fix requires changing global settings and related logic."
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Core Settings Paired Update
+
+## Action
+
+Edit lib/core/settings.py and one or more related files (e.g., core, plugin, or utility modules), then commit all changes together referencing the issue or feature.
+
+## Evidence
+
+- Workflow: core-settings-paired-update
+- Commit pattern: paired changes to lib/core/settings.py and related files
+- Example: 'Edit lib/core/settings.py to update/add/remove a setting or constant.'
+
+---
+id: sqlmap-instinct-add-or-update-payload-or-query
+trigger: "When supporting a new database payload, query, or exfiltration technique."
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Add Or Update Payload Or Query
+
+## Action
+
+Edit or add a file in data/xml/payloads/*.xml, data/xml/queries.xml, or data/procs/oracle/*.sql, optionally update lib/core/settings.py, and commit both changes together.
+
+## Evidence
+
+- Workflow: add-or-update-payload-or-query
+- Example: 'Edit or add a file in data/xml/payloads/*.xml or data/xml/queries.xml or data/procs/oracle/*.sql.'
+
+---
+id: sqlmap-instinct-implement-new-option-or-feature
+trigger: "When introducing a new CLI option or major feature."
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Implement New Option Or Feature
+
+## Action
+
+Edit lib/core/settings.py, lib/parse/cmdline.py, lib/core/option.py, lib/core/optiondict.py, sqlmap.conf, and implementation files as needed, then commit all related changes together.
+
+## Evidence
+
+- Workflow: implement-new-option-or-feature
+- Example: 'Edit lib/core/settings.py to add new option constants or defaults.'
+
+---
+id: sqlmap-instinct-documentation-or-readme-update
+trigger: "When updating documentation or adding a new translation."
+confidence: 0.83
+domain: workflow
+source: repo-analysis
+source_repo: Asylum4You/sqlmap
+---
+
+# Sqlmap Instinct Documentation Or Readme Update
+
+## Action
+
+Edit or add files in doc/translations/ or README.md, optionally update lib/core/settings.py, and commit documentation changes.
+
+## Evidence
+
+- Workflow: documentation-or-readme-update
+- Example: 'Edit or add files in doc/translations/ or the main README.md.'
+
